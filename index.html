@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Produk Rekomendasi</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+*{
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:linear-gradient(135deg,#050505,#0a0a0a,#020202);
+  color:white;
+  display:flex;
+  justify-content:center;
+}
+
+.container{
+  width:100%;
+  max-width:420px;
+  padding:20px;
+}
+
+h2{
+  text-align:center;
+  background:linear-gradient(90deg,#00ffcc,#00aaff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#aaa;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.product{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(12px);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:15px;
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 0 25px rgba(0,255,200,0.05);
+  transition:.3s;
+}
+
+.product:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 35px rgba(0,255,200,0.15);
+}
+
+.product-name{
+  font-size:15px;
+  font-weight:600;
+}
+
+.number{
+  color:#00ffcc;
+  margin-right:6px;
+  font-weight:700;
+}
+
+.btn{
+  margin-top:12px;
+  display:block;
+  text-align:center;
+  padding:12px;
+  border-radius:12px;
+  background:linear-gradient(90deg,#00ffcc,#00aaff);
+  color:black;
+  font-weight:700;
+  text-decoration:none;
+  letter-spacing:.5px;
+  transition:.3s;
+}
+
+.btn:hover{
+  filter:brightness(1.15);
+  transform:scale(1.02);
+}
+
+.footer{
+  text-align:center;
+  font-size:11px;
+  color:#555;
+  margin-top:20px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h2>🔥 dulexshop.id 🔥</h2>
+<div class="subtitle">Klik produk pilihan kamu 👇</div>
+
+<div id="list"></div>
+
+<div class="footer">Powered by dulexshop.id</div>
+
+</div>
+
+<script>
+const products = [
+  { name:"Serum Wajah Glowing", link:"https://link-affiliate-anda.com" },
+  { name:"Headset Gaming RGB", link:"https://link-affiliate-anda.com" },
+  { name:"Smartwatch Waterproof", link:"https://link-affiliate-anda.com" },
+    { name:"Smartwatch Waterproof", link:"https://link-affiliate-anda.com" },
+];
+
+const list = document.getElementById("list");
+
+products.forEach((p,i)=>{
+  list.innerHTML += `
+    <div class="product">
+      <div class="product-name">
+        <span class="number">${i+1}.</span>${p.name}
+      </div>
+      <a class="btn" href="${p.link}" target="_blank">Beli Sekarang</a>
+    </div>
+  `;
+});
+</script>
+
+</body>
+</html>
